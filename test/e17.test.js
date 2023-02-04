@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { maxBy, minBy } from "../exercises/e17";
 
-describe.only("minBy", () => {
+describe("minBy", () => {
   let people = [];
   beforeEach(() => {
     people = [
@@ -13,6 +13,13 @@ describe.only("minBy", () => {
   });
   it("minBy should return the youngest person", () => {
     expect(minBy(people, (person) => person.age)).toEqual({
+      name: "andrey",
+      age: 22,
+    });
+  });
+
+  it("It should find the person with the least alphabetical name (starts with a in this case)", () => {
+    expect(minBy(people, (person) => person.name)).toEqual({
       name: "andrey",
       age: 22,
     });
@@ -74,6 +81,13 @@ describe("maxBy", () => {
     expect(maxBy(people, (person) => person.age)).toEqual({
       name: "peter",
       age: 30,
+    });
+  });
+
+  it("It should find the person with the longest name", () => {
+    expect(maxBy(people, (person) => person.name.length)).toEqual({
+      name: "andrey",
+      age: 22,
     });
   });
 
