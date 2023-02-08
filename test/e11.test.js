@@ -9,7 +9,7 @@ describe("lowMoonsPlanets", () => {
   it("Should return an array of 2 items", () => {
     expect(lowMoonsPlanets(data).length).toEqual(4);
   });
-  it("The items names should be 'Mars' and 'Earth'", () => {
+  it("The items names should be 'Mars', 'Mercure', 'Earth' and 'Vénus'", () => {
     expect(lowMoonsPlanets(data)).toEqual([
       "Mars",
       "Mercure",
