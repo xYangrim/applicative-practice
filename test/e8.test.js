@@ -9,4 +9,7 @@ describe("findPlanetNameByMoon", () => {
   it("Should be the planet Neptune for Triton moon", () => {
     expect(findPlanetNameByMoon(data,'Triton')).toEqual('Neptune');
   });
+  it("Should be the planet Saturne for Titan moon", () => {
+    expect(findPlanetNameByMoon(data,'Titan')).toEqual('Saturne');
+  });
 });
