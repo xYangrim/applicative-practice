@@ -1,3 +1,5 @@
+import { maxBy } from "./e17";
+
 /**
  * SPACE DATA EXERCISE 18
  * Return the year with the greatest number of Asteroids discoveries
@@ -5,9 +7,22 @@
  */
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+  const countsOfYears = data.asteroids.reduce((counts, asteroid) => {
+    let year = asteroid.discoveryYear;
+    counts[year] = (counts[year] || 0) + 1;
+    return counts;
+}, {})
+
+let greatestYear = Object.keys(countsOfYears)[0];
+Object.keys(countsOfYears).forEach((year) => {
+    if(countsOfYears[year] > countsOfYears[greatestYear]) 
+
+    greatestYear = year;
+});
+
+return parseInt(greatestYear, 10);
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"
